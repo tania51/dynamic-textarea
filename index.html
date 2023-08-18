@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamic Textarea</title>
+
+    <!-- daisyui cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- css file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="text-center">
+        <div class="w-10/12 mx-auto mt-20 p-10 bg-teal-300 rounded-xl shadow-lg shadow-teal-500">
+            <h2 class="text-3xl font-bold pb-5">My Text Editor</h2>
+            <div class="border-2 border-black p-5">
+                <div class="box">
+                    <div class="flex">
+                        <!-- left font style icon images -->
+                        <div class="flex gap-3 p-3">
+                            <img onclick="textStyleChange()" ondblclick="textStyleNormal()" class="w-4 h-4 cursor-pointer" src="./images/bold.png" alt="Bold-icon">
+                            <img onclick="fontItalick()" ondblclick="fontNormal()" class="w-4 h-4 cursor-pointer" src="images/italic.png" alt="Italic-icon">
+                            <img onclick="fontUnderline()" ondblclick="fontUnderlineChange()" class="w-4 h-4 cursor-pointer" src="images/underlined-text.png" alt="Underlined-text-icon">
+                        </div>
+                        <!-- text align icon images -->
+                        <div class="flex gap-3 p-3 mx-auto">
+                            <img onclick="textAlignDefault()" class="w-4 h-4 cursor-pointer" src="./images/align-left.png" alt="Bold-icon">
+                            <img onclick="textAlignCenter()" class="w-4 h-4 cursor-pointer" src="images/format.png" alt="Italic-icon">
+                            <img onclick="textAlignRight()" class="w-4 h-4 cursor-pointer" src="images/align-right.png" alt="Underlined-text-icon">
+                            <img onclick="textAlignJustify()" class="w-4 h-4 cursor-pointer" src="images/justify.png" alt="Underlined-text-icon">
+                        </div>
+                        <!-- font size, text color -->
+                        <div class="flex gap-3 p-3">
+                            <input onclick="fontSize()" id="font-size" class="w-10 pl-2" type="number">
+                            <p onclick="textUpperCase()" ondblclick="textLowerCase()" class="cursor-pointer font-semibold">aA</p>
+                            <input oninput="colorPicker()" id="color-picker" type="color">
+                        </div>
+                    </div>
+                    <div>
+                        <textarea id="text-area" class="w-full h-64 p-4"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- js file added -->
+    <script src="js/script.js"></script>
+</body>
+</html>
